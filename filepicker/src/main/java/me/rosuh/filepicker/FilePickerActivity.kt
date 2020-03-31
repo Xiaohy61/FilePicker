@@ -232,7 +232,7 @@ class FilePickerActivity : AppCompatActivity(), View.OnClickListener,
             setColorSchemeColors(
                 *resources.getIntArray(
                     when (pickerConfig.themeId) {
-                        R.style.FilePickerThemeCrane -> {
+                        R.style.FilePickerThemeWhite -> {
                             R.array.crane_swl_colors
                         }
                         R.style.FilePickerThemeReply -> {
