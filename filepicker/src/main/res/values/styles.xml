@@ -34,7 +34,7 @@
     </style>
 
     <!--https://material.io/design/material-studies/crane.html#about-crane-->
-    <style name="FilePickerThemeCrane" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="FilePickerThemeWhite" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/crane_text_color</item>
         <item name="colorPrimaryDark">@color/crane_text_color</item>
         <item name="colorAccent">@color/crane_color_accent</item>

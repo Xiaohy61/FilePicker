@@ -115,7 +115,7 @@ class SampleActivity : AppCompatActivity() {
         btn_multi_file.setOnClickListener {
             FilePickerManager
                 .from(this@SampleActivity)
-                .setTheme(R.style.FilePickerThemeCrane)
+                .setTheme(R.style.FilePickerThemeWhite)
                 .forResult(FilePickerManager.REQUEST_CODE)
         }
         // 多选文件夹
@@ -153,7 +153,7 @@ class SampleActivity : AppCompatActivity() {
     private fun getRandomTheme(): Int {
         return arrayListOf(
             R.style.FilePickerThemeRail,
-            R.style.FilePickerThemeCrane,
+            R.style.FilePickerThemeWhite,
             R.style.FilePickerThemeReply,
             R.style.FilePickerThemeShrine
         ).run {
