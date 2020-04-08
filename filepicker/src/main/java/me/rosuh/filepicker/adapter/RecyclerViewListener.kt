@@ -1,11 +1,10 @@
 package me.rosuh.filepicker.adapter
 
 import android.app.Activity
-import android.support.v4.view.GestureDetectorCompat
-import android.support.v7.widget.RecyclerView
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.view.GestureDetectorCompat
 import me.rosuh.filepicker.R
 import me.rosuh.filepicker.utils.ScreenUtils
 
@@ -17,27 +16,27 @@ import me.rosuh.filepicker.utils.ScreenUtils
  * OnItemTouchListener 无法轻易实现对子控件点击事件的监听
  *
  */
-class RecyclerViewListener(val activity: Activity, val recyclerView: RecyclerView, val itemClickListener: OnItemClickListener) :
-    RecyclerView.OnItemTouchListener{
+class RecyclerViewListener(val activity: Activity, val recyclerView: androidx.recyclerview.widget.RecyclerView, val itemClickListener: OnItemClickListener) :
+    androidx.recyclerview.widget.RecyclerView.OnItemTouchListener{
 
     interface OnItemClickListener {
 
-        fun onItemClick(adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>, view: View, position: Int)
+        fun onItemClick(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>, view: View, position: Int)
 
-        fun onItemLongClick(adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>, view: View, position: Int)
+        fun onItemLongClick(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>, view: View, position: Int)
 
-        fun onItemChildClick(adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>, view: View, position: Int)
+        fun onItemChildClick(adapter: androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>, view: View, position: Int)
     }
 
 
     private var gestureDetectorCompat:GestureDetectorCompat =
         GestureDetectorCompat(recyclerView.context, ItemTouchHelperGestureListener())
 
-    override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+    override fun onTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent) {
         gestureDetectorCompat.onTouchEvent(e)
     }
 
-    override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+    override fun onInterceptTouchEvent(rv: androidx.recyclerview.widget.RecyclerView, e: MotionEvent): Boolean {
         return gestureDetectorCompat.onTouchEvent(e)
     }
 
