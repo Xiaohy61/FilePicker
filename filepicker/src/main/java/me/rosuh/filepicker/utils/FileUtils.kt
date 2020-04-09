@@ -2,6 +2,7 @@ package me.rosuh.filepicker.utils
 
 import android.content.Context
 import android.os.Environment
+import android.util.Log
 import me.rosuh.filepicker.R
 import me.rosuh.filepicker.bean.BeanSubscriber
 import me.rosuh.filepicker.bean.FileItemBeanImpl
@@ -47,6 +48,7 @@ class FileUtils {
          */
         fun produceListDataSource(rootFile: File, beanSubscriber: BeanSubscriber):ArrayList<FileItemBeanImpl>{
             val listData: ArrayList<FileItemBeanImpl> = ArrayList()
+            Log.i("skyward","rootFile.listFiles() ${rootFile.listFiles()} size: ${rootFile.listFiles().size}")
             for (file in rootFile.listFiles()) {
                 //以符号 . 开头的视为隐藏文件或隐藏文件夹，后面进行过滤
                 val isHiddenFile = file.name.startsWith(".")

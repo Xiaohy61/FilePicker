@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.*
 import android.os.Environment.MEDIA_MOUNTED
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -51,6 +52,7 @@ class FilePickerActivity : AppCompatActivity(), View.OnClickListener,
                 File(navDataSource.last().dirPath)
             }
             val listData = FileUtils.produceListDataSource(rootFile, this@FilePickerActivity)
+            Log.i("skyward","listdata: $listData")
             // 导航栏数据集
             navDataSource = FileUtils.produceNavDataSource(
                 navDataSource,
